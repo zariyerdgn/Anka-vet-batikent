@@ -1,0 +1,21 @@
+{
+  "name": "Anka Veteriner Kliniği - Batıkent",
+  "short_name": "Anka Vet",
+  "description": "Batıkent Ankara Veteriner Kliniği - 7/24 Acil Veteriner Hizmeti",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#16a34a",
+  "icons": [
+    {
+      "src": "/images/logo/anka-logo.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/images/logo/anka-logo.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

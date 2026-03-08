@@ -1,0 +1,626 @@
+Batıkent Anka Veteriner Web Sitesi - Geliştirme Promptu
+Bu dosya, mevcut Yerköy Anka Veteriner web sitesinin birebir aynısını Batıkent Anka Veteriner için oluşturmak amacıyla hazırlanmış kapsamlı bir prompttur. Teknoloji, tasarım, yapı ve içerik olarak birebir aynı olacak, sadece lokasyon/işletme bilgileri değişecektir.
+
+PROMPT BAŞLANGIÇ
+Bana bir veteriner kliniği web sitesi oluştur. Bu site Batıkent Anka Veteriner Kliniği için olacak. Aşağıdaki tüm detayları birebir uygula.
+
+1. TEKNOLOJİ STACK
+* Framework: Next.js 15 (App Router)
+* React: 18.3.x
+* TypeScript: 5.x
+* CSS Framework: Tailwind CSS 3.4.x
+* Animasyonlar: Framer Motion 11.x
+* Font: Google Fonts - Poppins (300, 400, 500, 600, 700 weight)
+* Image Optimization: Next.js built-in Image component + Sharp
+* Build Output: Standalone (Docker-ready)
+* Deployment: Docker container (Node 20 Alpine)
+* Paket Yöneticisi: npm
+package.json Bağımlılıkları:
+{
+  "dependencies": {
+    "framer-motion": "^11.11.17",
+    "next": "^15.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.23",
+    "eslint": "^8",
+    "eslint-config-next": "^15.1.0",
+    "postcss": "^8",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
+
+2. İŞLETME BİLGİLERİ (YENİ - BATIKENT)
+Aşağıdaki bilgileri tüm site genelinde kullan. Eski Yerköy bilgileri yerine bunları koy:
+Alan	Değer
+İşletme Adı	Anka Veteriner Kliniği
+Konum	Batıkent, Yenimahalle / Ankara
+Bölge	Ankara
+Domain	batikentveteriner.com
+Telefon	[(0312) 354 26 52]
+WhatsApp	[0554 855 0590 
+E-posta	[E-POSTA GİRİLECEK]
+Adres	[TAM ADRES GİRİLECEK]
+Posta Kodu	[POSTA KODU]
+Google Maps Koordinatları	[ENLEM, BOYLAM]
+Kuruluş Yılı	[KURULuş YILI]
+Veteriner Hekim	[İBRAHİM YILDIRIM - ÖZGE YILDIRIM- EMEL EDA ŞAHİN]
+Hekim Mezuniyet	[ÜNİVERSİTE ADI] Veteriner Fakültesi
+Instagram	[https://www.instagram.com/ankavetbatikent/]
+Facebook	[FACEBOOK LINKI]
+Google Place ID	[GOOGLE PLACE ID]
+Google Analytics ID	[GA MEASUREMENT ID]
+Google Site Verification	[VERIFICATION CODE]
+Hizmet Bölgeleri (Batıkent Merkezli):
+Yerköy ve Yozgat ilçeleri yerine Ankara/Batıkent çevresindeki semtleri ve ilçeleri kullan: - Batıkent (Merkez) - Yenimahalle - Etimesgut - Sincan - Keçiören - Demetevler - Ostim - Eryaman - Çayyolu (gerekirse genişlet)
+Çevresel Değişkenler (next.config.js env):
+env: {
+  SITE_URL: 'https://batikentveteriner.com',
+  BUSINESS_NAME: 'ANKA Veteriner Kliniği',
+  BUSINESS_PHONE: '[TELEFON]',
+  BUSINESS_EMAIL: '[EMAIL]',
+  WHATSAPP_NUMBER: '[WHATSAPP NO]',
+}
+
+3. PROJE YAPISI
+Aşağıdaki dosya ve klasör yapısını birebir oluştur:
+app/
+├── globals.css
+├── layout.tsx                    # Ana layout - Schema.org, metadata, font, nav, footer
+├── manifest.ts                   # PWA manifest
+├── not-found.tsx                 # 404 sayfası
+├── page.tsx                      # Ana sayfa (hero, services, stats, CTA)
+├── robots.ts                     # robots.txt generator
+├── sitemap.ts                    # Sitemap generator
+├── api/
+│   └── reviews/
+│       └── route.ts              # Google Reviews API endpoint
+├── asilama/
+│   └── page.tsx                  # Aşılama hizmet sayfası
+├── blog/
+│   ├── layout.tsx
+│   ├── page.tsx                  # Blog listesi
+│   └── [slug]/
+│       └── page.tsx              # Blog detay
+├── bolge/
+│   ├── page.tsx                  # Hizmet bölgeleri listesi
+│   └── [slug]/
+│       └── page.tsx              # Bölge detay (programmatic SEO)
+├── galeri/
+│   ├── layout.tsx
+│   └── page.tsx                  # Galeri sayfası
+├── gizlilik-politikasi/
+│   └── page.tsx
+├── hakkimizda/
+│   ├── layout.tsx
+│   ├── page.tsx                  # Hakkımızda ana
+│   ├── ekibimiz/
+│   │   └── page.tsx
+│   ├── musteri-gorusleri/
+│   │   └── page.tsx
+│   └── sss/
+│       └── page.tsx
+├── hizmetler/
+│   └── page.tsx                  # Tüm hizmetler listesi
+├── iletisim/
+│   ├── layout.tsx
+│   └── page.tsx                  # İletişim formu + bilgiler
+├── inek-tirnak-bakimi/
+│   └── page.tsx                  # İnek tırnak bakımı detay
+├── kedi-kisirlastrma/
+│   └── page.tsx                  # Kedi kısırlaştırma detay
+├── kedi-kopek-muayene/
+│   └── page.tsx                  # Kedi köpek muayene
+├── kullanim-kosullari/
+│   └── page.tsx
+├── pansiyon/
+│   └── page.tsx                  # Pet pansiyon hizmeti
+├── randevu/
+│   ├── layout.tsx
+│   └── page.tsx                  # Randevu formu (WhatsApp'a yönlendirme)
+├── sik-sorulan-sorular/
+│   ├── layout.tsx
+│   └── page.tsx                  # SSS
+├── suni-tohumlama/
+│   └── page.tsx                  # Suni tohumlama detay
+├── urunlerimiz/
+│   └── page.tsx                  # Ürünler sayfası
+└── yakinimda-veteriner/
+    └── page.tsx                  # "Yakınımda Veteriner" SEO sayfası
+
+components/
+├── AnimatedSection.tsx           # Framer Motion scroll animasyonu
+├── AuthorBox.tsx                 # Blog yazar kutusu
+├── BlogFilter.tsx                # Blog kategori filtreleme
+├── BreadcrumbSchema.tsx          # Breadcrumb Schema.org
+├── Button.tsx                    # Reusable button component
+├── Card.tsx                      # Reusable card component
+├── Footer.tsx                    # Site footer
+├── GoogleAnalytics.tsx           # GA4 entegrasyonu
+├── GoogleReviews.tsx             # Google yorumları gösterimi
+├── LocalTrustSignals.tsx         # Yerel güven sinyalleri
+├── MobileCallBar.tsx             # Mobil alt arama çubuğu
+├── Navigation.tsx                # Navbar (scroll effect, dropdown, mobile menu)
+├── OfflineIndicator.tsx          # Çevrimdışı göstergesi
+├── OptimizedImage.tsx            # Optimize edilmiş resim
+├── ProductCard.tsx               # Ürün kartı
+├── RelatedBlogPosts.tsx          # İlgili blog yazıları
+├── RelatedServices.tsx           # İlgili hizmetler
+├── ScrollToTop.tsx               # Yukarı çık butonu
+├── SectionDivider.tsx            # Bölüm ayırıcı (wave, gradient)
+├── ShareButton.tsx               # Sosyal paylaşım
+├── StatCard.tsx                  # İstatistik kartı
+├── TrustBadge.tsx                # Güven rozeti
+└── WhatsAppButton.tsx            # Floating WhatsApp butonu
+
+lib/
+└── locations.ts                  # Bölge verileri (programmatic SEO)
+
+public/
+├── BingSiteAuth.xml
+├── manifest.json
+├── robots.txt
+├── data/
+│   └── reviews.json              # Google yorumları cache
+├── icons/                        # PWA ikonları
+└── images/                       # Tüm görseller
+    ├── cat/
+    ├── gallery/
+    ├── hero/
+    ├── hoof-care/
+    ├── products/
+    ├── reviews/
+    ├── services/
+    └── suni-tohumlama/
+
+scripts/
+├── fetch-google-reviews.js       # Google Reviews scraper
+└── optimize-images.js            # Görsel optimizasyonu
+
+4. TASARIM SİSTEMİ
+Renk Paleti (Tailwind Config):
+colors: {
+  primary: {  // Yeşil tonları
+    50: '#f0fdf4',
+    100: '#dcfce7',
+    200: '#bbf7d0',
+    300: '#86efac',
+    400: '#4ade80',
+    500: '#22c55e',
+    600: '#16a34a',
+    700: '#15803d',
+    800: '#166534',
+    900: '#14532d',
+  },
+  secondary: {  // Mavi tonları
+    50: '#eff6ff',
+    100: '#dbeafe',
+    200: '#bfdbfe',
+    300: '#93c5fd',
+    400: '#60a5fa',
+    500: '#3b82f6',
+    600: '#2563eb',
+    700: '#1d4ed8',
+    800: '#1e40af',
+    900: '#1e3a8a',
+  },
+}
+CSS Özellikleri (globals.css):
+* @tailwind base, components, utilities yapısı kullan
+* Özel animasyonlar: bounce-slow, gradient, animation delays (200ms, 400ms, 600ms, 800ms, 1000ms)
+* iOS Safe Area desteği: pb-safe, mb-safe
+* Dynamic viewport height: min-h-screen-dvh (100dvh)
+* Glass morphism: .glass class
+* Gradient text: .gradient-text class
+* Premium shadow: .shadow-premium class
+* Animated gradient: .animated-gradient class
+* Line clamp: .line-clamp-2, .line-clamp-3
+* Custom selection color: primary-200 bg
+* Smooth scroll: scroll-smooth
+Tipografi:
+* Font: Poppins (Google Fonts, next/font/google ile)
+* Başlıklar: Bold (700), Semi-bold (600)
+* Gövde: Regular (400), Light (300)
+* overflow-wrap: break-word tüm başlıklarda
+
+5. SAYFA BAZLI İÇERİK VE YAPI
+5.1 Ana Sayfa (page.tsx)
+Bölümler sırasıyla:
+1. 7/24 Acil Banner - Sağ alt köşe, fixed pozisyon, kırmızı gradient, ping animasyonlu
+2. Hero Section - Arka plan görsel + overlay, sol tarafta metin, sağ tarafta kart görsel
+    * Badge: "İnek Tırnak Bakımı Uzmanı" (ya da Batıkent'e uygun ana hizmet)
+    * Başlık: "Batıkent ve Ankara geneli veteriner hekimlik & pet"
+    * CTA butonları: "Hemen Randevu Alın" + "Tüm Hizmetlerimiz"
+    * Trust Badges: "Çiftlik Hizmeti", "Topallık Önleme", "7/24 Acil"
+3. İstatistikler - 4 grid: Yıllık Deneyim, Mutlu Müşteri, Kuruluş Yılı, 24/7 Acil
+4. İnek Tırnak Bakımı Özel Bölümü - Süt verimi artışı, topallık önleme, sıklık bilgisi, profesyonel ekipman
+5. Sık Görülen Hayvan Hastalıkları - Evcil (enfeksiyöz + paraziter), Büyükbaş (bulaşıcı + metabolik), Atlar, Kanatlılar
+6. Hizmetler Grid - 5 servis kartı: İnek Tırnak Bakımı, Büyükbaş Veteriner, Kedi Köpek Muayene, Aşılama, Acil Veteriner
+7. Neden Biz - Uzman Hekim, Modern Tesisler, Sevgi Dolu Yaklaşım, 7/24 Acil + Hayvan emoji kartları
+8. Hizmet Bölgeleri - Klinik hizmetleri, Mobil veteriner, Bölge kartları (Batıkent çevresi)
+9. Local Trust Signals (LocalTrustSignals component)
+10. Related Services (RelatedServices component)
+11. CTA Section - Randevu çağrısı, arka plan görsel + gradient overlay
+5.2 Hizmetler Sayfası
+Hizmet listesi (öncelik sırasıyla): 1. İnek Tırnak Bakımı ve Topallık Tedavisi 2. Suni Tohumlama (İnek Tohumlama) 3. Büyükbaş Veteriner Hizmetleri 4. Kedi & Köpek Muayene ve Tedavileri 5. Aşılama ve Koruyucu Sağlık 6. Acil Veteriner Hizmetleri 7. İç Hastalıkları 8. Ameliyat 9. Yavru Bakımı 10. Kedi & Köpek Pansiyonu
+Her hizmetin features listesi ve detay sayfası linki olacak.
+5.3 Hakkımızda Sayfası
+* Hero bölümü
+* Hikayemiz (kuruluş hikayesi)
+* İstatistikler: Yıllık Deneyim, Mutlu Hasta, Uzman Hekim, 24/7 Acil
+* Misyonumuz & Vizyonumuz kartları
+* Değerlerimiz: Şefkat, Mükemmellik, Güven, Yenilikçilik
+* Tesislerimiz: Laboratuvar, Görüntüleme, Ameliyathane
+* CTA Bölümü
+5.4 İletişim Sayfası
+* İletişim bilgileri kartları: Adres (Google Maps link), Telefon, E-posta, Çalışma Saatleri
+* Sosyal medya butonları: WhatsApp, Facebook, Instagram
+* İletişim formu (Ad, E-posta, Telefon, Konu dropdown, Mesaj)
+* Form submit → WhatsApp mesaj olarak gönder
+* Google Maps embed
+* Form validasyonu (client-side)
+5.5 Randevu Sayfası
+* Randevu formu alanları:
+    * Hayvan adı, Hayvan türü (Kedi/Köpek/Kuş/Büyükbaş/Küçükbaş/Diğer), Yaş
+    * Sahip bilgileri: Ad, E-posta, Telefon
+    * Randevu detayları: Tarih, Saat aralığı (dinamik - geçmiş saatler filtrelenir), Neden
+    * Ek bilgi textarea
+* Saat aralıkları: 09:00-11:00, 11:00-13:00, 14:00-16:00, 16:00-18:00
+* Randevu nedenleri: Genel Muayene, Aşılama, Kısırlaştırma, Tırnak Kesimi, Diş Bakımı, Acil Durum, Kontrol Muayenesi, Büyükbaş Muayene, Suni Tohumlama, Diğer
+* Submit → WhatsApp mesajına yönlendirme
+* Güven kartları: "Aynı Gün Randevu", "Ücretsiz Danışma", "Tüm Türler"
+5.6 Blog Sayfası
+* Blog yazıları listesi (grid layout)
+* Kategori filtreleme: Tümü, Köpek, Kedi, Büyükbaş, Genel
+* Her kart: emoji, başlık, özet, kategori badge, tarih, okuma süresi, yazar
+* Blog detay sayfası: [slug] dynamic route
+* İlgili blog yazıları (RelatedBlogPosts component)
+* Yazar kutusu (AuthorBox component)
+* Paylaşım butonları (ShareButton component)
+Blog konuları (Batıkent bölgesine uyarla): - Batıkent'te İnek Tırnak Bakımı - Suni Tohumlama Rehberi - Köpeklerde Aşı Takvimi - Kedilerde Beslenme - Kış Aylarında Evcil Hayvan Bakımı - Köpeklerde Diş Sağlığı - Kedilerde Stres Belirtileri - Yavru Köpek Eğitimi - Kuşlarda Tüy Dökülmesi - Evcil Hayvanlarda Obezite - Kedilerde Tırnak Bakımı
+5.7 Galeri Sayfası
+* Resim galerisi (grid layout)
+* Lightbox özelliği
+* Kategori filtreleme
+5.8 Bölge Sayfaları (Programmatic SEO)
+lib/locations.ts dosyasında Batıkent çevresi bölge verileri:
+export const locations: LocationData[] = [
+  {
+    slug: 'batikent',
+    name: 'Batıkent',
+    region: 'Ankara',
+    description: 'Batıkent merkezinde bulunan kliniğimizde...',
+    distanceFromCenter: 'Merkez',
+    services: ['Klinik Muayene', 'Cerrahi', 'Aşılama', 'Tırnak Bakımı', 'Suni Tohumlama', 'Acil Veteriner'],
+    keywords: ['Batıkent veteriner', 'Batıkent veteriner kliniği', ...],
+    population: '...',
+    isDistrict: true,
+  },
+  {
+    slug: 'yenimahalle',
+    name: 'Yenimahalle',
+    region: 'Ankara',
+    ...
+  },
+  {
+    slug: 'etimesgut',
+    name: 'Etimesgut',
+    region: 'Ankara',
+    ...
+  },
+  {
+    slug: 'sincan',
+    name: 'Sincan',
+    region: 'Ankara',
+    ...
+  },
+  {
+    slug: 'kecioren',
+    name: 'Keçiören',
+    region: 'Ankara',
+    ...
+  },
+  {
+    slug: 'demetevler',
+    name: 'Demetevler',
+    region: 'Ankara',
+    ...
+  },
+  {
+    slug: 'eryaman',
+    name: 'Eryaman',
+    region: 'Ankara',
+    ...
+  },
+  // ... diğer semtler
+];
+Her bölge için otomatik sayfa: /bolge/[slug]
+5.9 "Yakınımda Veteriner" Sayfası
+* "Batıkent yakınında veteriner" SEO sayfası
+* Interaktif bölge kartları
+* CTA butonları
+5.10 SSS Sayfası
+* Accordion yapısında sorular
+* Schema.org FAQPage markup
+5.11 Diğer Sayfalar
+* inek-tirnak-bakimi/ - Detaylı inek tırnak bakımı sayfası
+* suni-tohumlama/ - Detaylı suni tohumlama sayfası
+* kedi-kisirlastrma/ - Kedi kısırlaştırma detay
+* kedi-kopek-muayene/ - Kedi köpek muayene detay
+* asilama/ - Aşılama hizmetleri detay
+* pansiyon/ - Pet pansiyon hizmetleri
+* urunlerimiz/ - Ürünler listesi (ProductCard component ile)
+* gizlilik-politikasi/ - Gizlilik politikası
+* kullanim-kosullari/ - Kullanım koşulları
+* not-found.tsx - 404 sayfası
+
+6. COMPONENT DETAYLARI
+6.1 Navigation (Navigation.tsx)
+* Fixed pozisyon, z-50
+* Scroll efekti: scrolled → backdrop-blur-lg, shadow eklenir
+* Logo: gradient arka planlı, firma adı gradient text
+* Alt başlık: "Vet.Hek. [HEKİM ADI]"
+* Alt alt başlık: "Batıkent - Ankara"
+* Desktop: Yatay menü, Hakkımızda dropdown alt menüsü
+* Mobile: Hamburger menü, AnimatePresence ile geçiş, overlay, ESC tuşu ile kapatma, body scroll lock
+* "Randevu Al" butonu highlight (gradient arka plan)
+* Menü linkleri: Ana Sayfa, Hakkımızda (dropdown: Bizi Tanıyın, Ekibimiz, SSS, Müşteri Görüşleri), Hizmetler, Ürünlerimiz, Galeri, Blog, Randevu Al, İletişim
+6.2 Footer (Footer.tsx)
+* Dark gradient arka plan (gray-900 → gray-950)
+* Dekoratif blur elementleri
+* 4 sütun grid: Hakkımızda, Hızlı Linkler, Hizmetlerimiz, İletişim
+* Logo + firma bilgisi
+* Sosyal medya: Instagram, WhatsApp, Facebook
+* Çalışma saatleri kartı
+* Alt bar: Copyright + Gizlilik Politikası + Kullanım Koşulları
+* "sitenikur.digital" credit linki
+6.3 WhatsAppButton (WhatsAppButton.tsx)
+* Floating buton, sağ alt köşe
+* WhatsApp yeşili
+* Hover efekti + shadow
+* https://wa.me/[NUMARA]?text=Merhaba linki
+6.4 MobileCallBar (MobileCallBar.tsx)
+* Mobil cihazlarda alt sabit çubuk
+* Ara ve WhatsApp butonları
+* md ve üstünde gizlenir
+6.5 AnimatedSection (AnimatedSection.tsx)
+* Framer Motion IntersectionObserver (whileInView)
+* direction prop: 'left', 'right', 'up' (varsayılan)
+* delay prop
+* once: true - sadece bir kez tetiklenir
+6.6 Button (Button.tsx)
+* variant: 'primary' (varsayılan), 'outline', 'secondary'
+* size: 'sm', 'md' (varsayılan), 'lg'
+* href prop → Link olarak render
+* onClick prop → button olarak render
+* Gradient arka plan (primary-500 → primary-600)
+6.7 Card (Card.tsx)
+* hover prop: hover efekti ekler
+* className prop: ek class
+* Rounded-2xl, shadow-lg, padding
+6.8 SectionDivider (SectionDivider.tsx)
+* variant: 'wave', 'gradient'
+* color prop
+* flip prop
+* SVG wave pattern
+6.9 StatCard (StatCard.tsx)
+* number, label, icon props
+* delay prop (AnimatedSection)
+* Gradient arka plan, overlay efekti
+6.10 TrustBadge (TrustBadge.tsx)
+* icon + text props
+* Küçük badge görünümü
+6.11 LocalTrustSignals (LocalTrustSignals.tsx)
+* variant: 'compact', 'full'
+* Google puanı, yorum sayısı, yıllık deneyim göstergesi
+6.12 GoogleReviews (GoogleReviews.tsx)
+* /api/reviews endpoint'inden veri çeker
+* Google profil fotoğrafları
+* Yıldız puanlama gösterimi
+6.13 RelatedServices (RelatedServices.tsx)
+* Tüm hizmetlerin kartları
+* showAllLink prop
+6.14 ScrollToTop (ScrollToTop.tsx)
+* Scroll > 400px → görünür
+* Smooth scroll to top
+6.15 OfflineIndicator (OfflineIndicator.tsx)
+* navigator.onLine durumuna göre banner gösterir
+6.16 GoogleAnalytics (GoogleAnalytics.tsx)
+* GA4 Measurement ID ile
+* Script lazy loading
+
+7. SEO STRATEJİSİ
+7.1 Metadata (layout.tsx)
+title: {
+  default: 'Batıkent Veteriner | Anka Veteriner Kliniği - Ankara Büyükbaş & Pet',
+  template: '%s | Anka Veteriner Kliniği Batıkent',
+}
+description: 'Batıkent ve Ankara'da büyükbaş, küçükbaş ve pet veteriner hizmetleri...'
+keywords: ['Batıkent veteriner', 'Ankara veteriner', 'Batıkent büyükbaş veteriner', ...]
+metadataBase: new URL('https://batikentveteriner.com')
+7.2 Schema.org Markup (layout.tsx - Çoklu schema)
+Birebir aynı yapıda, Batıkent bilgileriyle:
+1. VeterinaryCare + LocalBusiness + MedicalBusiness schema
+    * name, alternateName, description, url, telephone, email
+    * priceRange: "₺₺"
+    * address (PostalAddress)
+    * geo (GeoCoordinates)
+    * areaServed (Batıkent çevresi ilçeleri)
+    * serviceArea (GeoCircle)
+    * hasOfferCatalog (tüm hizmetler)
+    * openingHoursSpecification
+    * sameAs (sosyal medya)
+    * founder (Person - hekim bilgileri, eğitim)
+    * aggregateRating
+    * sample reviews
+    * isAcceptingNewPatients: true
+2. FAQPage schema
+    * "Batıkent'te veteriner kliniği var mı?"
+    * "Batıkent'te mobil veteriner hizmeti var mı?"
+    * "Batıkent'te 7/24 acil veteriner var mı?"
+    * "Batıkent yakınında inek tırnak bakımı yapan veteriner var mı?"
+    * "Batıkent'te kedi köpek veterineri var mı?"
+    * "Ankara'da büyükbaş veteriner var mı?"
+    * "Batıkent veteriner ücretleri ne kadar?"
+3. WebSite schema (SearchAction ile)
+4. ProfessionalService schema
+5. ItemList schema (Sitelinks Navigation)
+7.3 Geo Meta Tags (layout.tsx head)
+<meta name="geo.region" content="TR-06" />
+<meta name="geo.placename" content="Batıkent, Ankara" />
+<meta name="geo.position" content="[ENLEM];[BOYLAM]" />
+<meta name="ICBM" content="[ENLEM], [BOYLAM]" />
+7.4 Sitemap (sitemap.ts)
+Tüm sayfalar + bölge sayfaları + blog sayfaları ile dinamik sitemap.
+7.5 Robots (robots.ts)
+Test ortamında noindex, production'da index.
+7.6 BreadcrumbSchema (BreadcrumbSchema.tsx)
+Her sayfada uygun breadcrumb Schema.org markup'ı.
+7.7 OpenGraph & Twitter Cards
+Her sayfada locale: 'tr_TR', type: 'website', resimler ile.
+
+8. ÖNEMLİ TEKNİK ÖZELLİKLER
+8.1 next.config.js
+const nextConfig = {
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'lh3.googleusercontent.com', pathname: '/**' },
+      { protocol: 'https', hostname: '**' },
+    ],
+  },
+  compress: true,
+  poweredByHeader: false,
+  output: 'standalone',
+  experimental: { optimizePackageImports: ['lucide-react'] },
+  swcMinify: true,
+  compiler: { removeConsole: process.env.NODE_ENV === 'production' },
+  headers: // Security headers (X-DNS-Prefetch-Control, X-Frame-Options, X-Content-Type-Options, Referrer-Policy)
+           // Cache headers for images and static files (max-age=31536000, immutable)
+}
+8.2 PWA Desteği
+* manifest.ts ve public/manifest.json
+* theme-color: #10b981
+* apple-mobile-web-app-capable: yes
+* Touch icon
+8.3 Form Handling
+* Tüm formlar (İletişim, Randevu) WhatsApp'a yönlendirir
+* Client-side validation
+* Encoded message format
+8.4 Google Reviews API
+* /api/reviews endpoint
+* public/data/reviews.json cache dosyası
+* scripts/fetch-google-reviews.js scraper
+8.5 Responsive Design
+* Mobile-first yaklaşım
+* Breakpoints: sm (640px), md (768px), lg (1024px), xl (1280px)
+* iOS safe area desteği
+* Mobile call bar (sadece mobil)
+* Desktop dropdown menü, mobil hamburger menü
+8.6 Erişilebilirlik
+* "Ana içeriğe atla" skip link
+* ARIA labels (navigation, buttons)
+* Semantic HTML (header, main, footer, section, nav)
+* Focus visible styles
+* Alt text tüm görsellerde
+* keyboard navigation (ESC key for mobile menu)
+8.7 Performance
+* Image optimization (avif, webp)
+* Font display: swap
+* Preconnect to Google Fonts
+* Immutable cache headers
+* Standalone output (minimal Docker image)
+* Production'da console.log kaldırma
+
+9. DOCKER DEPLOYMENT
+Dockerfile
+# Multi-stage build
+# Stage 1: deps (node:20-alpine) - npm ci
+# Stage 2: builder - npm run build
+# Stage 3: runner (node:20-alpine)
+#   - User: nextjs:nodejs
+#   - COPY standalone, static, public
+#   - CMD ["node", "server.js"]
+#   - PORT: 4000
+docker-compose yapısı
+* Test: docker-compose.test.yml (test subdomain)
+* Prod: docker-compose.prod.yml (ana domain)
+* nginx-proxy + ACME companion (Let's Encrypt SSL)
+
+10. ÇALIŞMA SAATLERİ
+Gün	Saat
+Pazartesi - Cuma	09:00 - 19:00
+Cumartesi	09:00 - 17:00
+Pazar	Sadece Acil
+11. HİZMET LİSTESİ (Tüm Hizmetler)
+1. İnek Tırnak Bakımı ve Topallık Tedavisi → /inek-tirnak-bakimi
+2. Suni Tohumlama (İnek Tohumlama) → /suni-tohumlama
+3. Büyükbaş Veteriner Hizmetleri → /hizmetler
+4. Küçükbaş Veteriner Hizmetleri → /hizmetler
+5. Kedi & Köpek Muayene ve Tedavi → /kedi-kopek-muayene
+6. Kedi Kısırlaştırma → /kedi-kisirlastrma
+7. Aşılama ve Koruyucu Sağlık → /asilama
+8. Acil Veteriner Hizmetleri (7/24) → /iletisim
+9. İç Hastalıkları → /hizmetler
+10. Ameliyat ve Cerrahi → /hizmetler
+11. Yavru Bakımı → /hizmetler
+12. Pet Pansiyon → /pansiyon
+13. Mobil Veteriner Hizmeti → /hizmetler
+
+12. NAVIGATION MENÜ YAPISI
+Desktop / Mobile Menü:
+Menü	Link	Özel
+Ana Sayfa	/	
+Hakkımızda	/hakkimizda	Dropdown ↓
+→ Bizi Tanıyın	/hakkimizda	Dropdown item
+→ Ekibimiz	/hakkimizda/ekibimiz	Dropdown item
+→ SSS	/hakkimizda/sss	Dropdown item
+→ Müşteri Görüşleri	/hakkimizda/musteri-gorusleri	Dropdown item
+Hizmetler	/hizmetler	
+Ürünlerimiz	/urunlerimiz	
+Galeri	/galeri	
+Blog	/blog	
+Randevu Al	/randevu	Highlight (gradient bg)
+İletişim	/iletisim	
+Footer Hızlı Linkler:
+* Hakkımızda, Hizmetlerimiz, Yakınımda Veteriner, Hizmet Bölgelerimiz, Blog, Randevu Al, İletişim
+Footer Hizmetler:
+* İnek Tırnak Bakımı, Suni Tohumlama, Büyükbaş Veteriner, Kedi & Köpek Muayene, Kedi Kısırlaştırması, Pet Pansiyonu, Acil Hizmet
+
+13. ANIMASYON DETAYLARI
+Framer Motion Kullanımı:
+* AnimatedSection: Scroll'da görünür olunca animasyon
+    * direction="left" → soldan gelen
+    * direction="right" → sağdan gelen
+    * varsayılan → alttan gelen
+    * initial → animate with whileInView
+    * once: true
+* Navigation Mobile: AnimatePresence ile giriş/çıkış
+* 7/24 Badge: CSS animate-ping ile pulse efekti
+* Hero: Floating blur elementleri animate-pulse
+* Cards: hover:scale-105, hover:-translate-y-0.5
+* Hero Image Card: rotate-2 hover:rotate-0 transition-transform duration-500
+
+14. ÖNEMLİ NOTLAR
+1. Birebir Aynı Yapı: Site yapısı, teknoloji, tasarım ve fonksiyonlar Yerköy sitesiyle tamamen aynı olacak. Sadece lokasyon, işletme bilgileri ve bölge adları değişecek.
+2. SEO Odaklı: Tüm sayfalar Schema.org markup, OpenGraph, meta description, canonical URL, breadcrumb ile donatılmış olacak. "Batıkent veteriner", "Ankara veteriner" gibi yerel anahtar kelimeler kullanılacak.
+3. WhatsApp Entegrasyonu: İletişim ve randevu formları backend API yerine WhatsApp mesajına yönlendirme yapacak.
+4. Mobile-First: Tüm sayfalar önce mobil tasarlanacak, responsive breakpoint'lerle büyük ekranlara uyarlanacak.
+5. Performans: Next.js Image component, font swap, avif/webp format, immutable cache headers, standalone output.
+6. Test Ortamı: NEXT_PUBLIC_ENVIRONMENT=test ile test subdomain'inde noindex.
+7. Görseller: Görseller /public/images/ altında kategorize edilecek. Mevcut siteden farklı görseller kullanılacaksa, aynı boyut ve formatta olmalı.
+8. Bölge Sayfaları: lib/locations.ts'de Batıkent çevresi bölgeleri tanımlanacak ve /bolge/[slug] ile programmatic SEO sayfaları oluşturulacak.
+9. Form Submit: Tüm formlar WhatsApp API'ye (https://wa.me/[NUMARA]?text=...) format olarak gönderilecek.
+10. copyright (footer): © {currentYear} Anka Veteriner Kliniği - Batıkent, Ankara. Tüm hakları saklıdır.
+
+PROMPT SONU
+Yukarıdaki tüm detayları kullanarak Batıkent Anka Veteriner Kliniği web sitesini oluştur. [KÖŞELI PARANTEZ] içindeki alanları müşterinin vereceği gerçek bilgilerle doldur. Teknoloji, tasarım, yapı ve içerik olarak mevcut Yerköy Anka Veteriner sitesinin birebir aynısı olacak. ben hangi resim nereye gelicekse başna lokasyon yazdım 

@@ -1,0 +1,92 @@
+{
+  "averageRating": 4.9,
+  "totalReviews": 213,
+  "googleReviewsUrl": "https://www.google.com/search?sca_esv=d0d51c5094d38dd2&sxsrf=ANbL-n4W4TOZovBU92cfCS9atKSlqK1-Pg:1772924376071&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOeRroW35CWlQblTMpIRTqXlv2ifEYjEoJSzDlecC2PleJJ3JifggUAEeBVIOr3rW2pI21Vs7qIyEoL2YGMaAkXHgajvigQUg99xS0m-6-C2h-e_iHa3gUgEgupTO_G0UKJRb7JY%3D&q=Bat%C4%B1kent+Anka+Veteriner+Klini%C4%9Fi+Yorumlar&sa=X&ved=2ahUKEwi02pj98Y6TAxWc3QIHHfR6HzwQ0bkNegQIOhAF&biw=1470&bih=772&dpr=2",
+  "writeReviewUrl": "https://www.google.com/search?sca_esv=d0d51c5094d38dd2&sxsrf=ANbL-n788bgKOM8T5iyWVkPsPA1aQKB8JQ:1772924380319&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOeRroW35CWlQblTMpIRTqXlv2ifEYjEoJSzDlecC2PleJJ3JifggUAEeBVIOr3rW2pI21Vs7qIyEoL2YGMaAkXHgajvigQUg99xS0m-6-C2h-e_iHa3gUgEgupTO_G0UKJRb7JY%3D&q=Bat%C4%B1kent+Anka+Veteriner+Klini%C4%9Fi+Yorumlar&sa=X&ved=2ahUKEwiV95v_8Y6TAxWj5AIHHYFFG3gQ0bkNegQIIxAF&biw=1470&bih=772&dpr=2",
+  "reviews": [
+    {
+      "author_name": "Buse Duran",
+      "rating": 5,
+      "text": "Kedim için geldiğimde çok ilgili ve profesyonel bir yaklaşım gördüm. Özge Hanım kedimin sorununu hemen teşhis etti ve tedavisine başladı. Kliniğin temizliği ve düzeni de çok iyiydi. Batıkent'te veteriner arayan herkese gönül rahatlığıyla tavsiye ediyorum.",
+      "relative_time_description": "2 hafta önce",
+      "date": "2026-02-22"
+    },
+    {
+      "author_name": "Emre Aksoy",
+      "rating": 5,
+      "text": "Köpeğimizin kısırlaştırma ameliyatını İbrahim Bey yaptı. Ameliyat öncesi ve sonrası detaylı bilgi verdiler, her aşamada bizi bilgilendirdiler. Köpeğimiz çok kısa sürede toparlandı. Cerrahide gerçekten çok deneyimliler. Teşekkürler Anka Veteriner!",
+      "relative_time_description": "1 ay önce",
+      "date": "2026-02-05"
+    },
+    {
+      "author_name": "Selin Yılmaz",
+      "rating": 5,
+      "text": "Kedimin kalp problemi vardı, Özge Hanım ultrasonografi ile kontrol etti ve iç hastalıkları konusundaki uzmanlığı ile tedavi planı oluşturdu. Şu an kedimiz çok daha iyi. Kardiyoloji konusunda gerçekten uzmanlar.",
+      "relative_time_description": "3 hafta önce",
+      "date": "2026-02-15"
+    },
+    {
+      "author_name": "Tolga Kaya",
+      "rating": 5,
+      "text": "Gece 2'de köpeğimiz rahatsızlandı, aradığımızda hemen yönlendirdiler. 7/24 acil hizmet gerçekten hayat kurtarıyor. Emel Hanım çok ilgiliydi ve köpeğimize müdahale etti. Batıkent'te böyle bir klinik olduğu için çok şanslıyız.",
+      "relative_time_description": "1 hafta önce",
+      "date": "2026-02-28"
+    },
+    {
+      "author_name": "Derya Öztürk",
+      "rating": 5,
+      "text": "3 kedimiz var ve hepsinin aşılarını burada yaptırıyoruz. Her gelişimizde çok güler yüzlü karşılanıyoruz. Aşı takvimleri konusunda bizi düzenli olarak bilgilendiriyorlar. Fiyatları da gayet makul. 5 yıldız hak ediyorlar.",
+      "relative_time_description": "2 ay önce",
+      "date": "2026-01-08"
+    },
+    {
+      "author_name": "Can Demir",
+      "rating": 5,
+      "text": "Golden Retriever'ımızın diz ameliyatını İbrahim Bey gerçekleştirdi. 11 yıllık deneyimi gerçekten hissediliyor. Ameliyat sonrası kontroller de çok titiz yapıldı. Köpeğimiz artık rahatça koşabiliyor. Minnettar kalacağız.",
+      "relative_time_description": "3 ay önce",
+      "date": "2025-12-10"
+    },
+    {
+      "author_name": "Gizem Arslan",
+      "rating": 5,
+      "text": "Kedimizi pansiyona bıraktık tatil süresince. Veteriner gözetiminde olması bize büyük güven verdi. Her gün fotoğraf gönderdiler. Döndüğümüzde kedimiz mutlu ve sağlıklıydı. Pansiyon hizmeti için de teşekkürler!",
+      "relative_time_description": "1 ay önce",
+      "date": "2026-02-01"
+    },
+    {
+      "author_name": "Hakan Çelik",
+      "rating": 4,
+      "text": "Genel olarak memnunuz. Kliniğin ekipmanları modern ve doktorlar çok bilgili. Sadece yoğun saatlerde biraz bekleme olabiliyor ama randevu sistemi ile çözülebilir. Yine de tavsiye ederim.",
+      "relative_time_description": "2 ay önce",
+      "date": "2026-01-15"
+    },
+    {
+      "author_name": "Melis Şahin",
+      "rating": 5,
+      "text": "Yeni doğan yavru kedilerimizin ilk muayenesini burada yaptırdık. Emel Hanım çok sevecen yaklaştı ve yavruların bakımı hakkında detaylı bilgi verdi. Her şeyi sabırla anlattılar. Harika bir ekip!",
+      "relative_time_description": "3 hafta önce",
+      "date": "2026-02-14"
+    },
+    {
+      "author_name": "Burak Yıldız",
+      "rating": 5,
+      "text": "Batıkent'e yeni taşındık ve veteriner arıyorduk. Google yorumlarını görünce buraya geldik ve hiç pişman olmadık. Labrador'umuzun tüm sağlık kontrollerini burada yaptırıyoruz. Profesyonel ve güvenilir bir klinik.",
+      "relative_time_description": "2 hafta önce",
+      "date": "2026-02-20"
+    },
+    {
+      "author_name": "Elif Korkmaz",
+      "rating": 5,
+      "text": "Kedimin böbrek problemi için Özge Hanım'a geldik. Ultrasonografi ve kan tahlilleri ile kapsamlı bir teşhis yapıldı. Tedavi süreci boyunca sürekli takip ettiler. İç hastalıkları konusunda gerçekten uzmanlar. Kedimiz şimdi çok daha iyi.",
+      "relative_time_description": "1 ay önce",
+      "date": "2026-02-03"
+    },
+    {
+      "author_name": "Oğuz Aydın",
+      "rating": 5,
+      "text": "Çok memnun kaldık. Köpeğimize yapılan tüm işlemler hakkında detaylı bilgi verildi. Fiyatlar makul ve şeffaf. Hiçbir gereksiz işlem dayatılmadı. Dürüst ve güvenilir bir veteriner kliniği arayan herkese öneririm.",
+      "relative_time_description": "4 hafta önce",
+      "date": "2026-02-10"
+    }
+  ]
+}
