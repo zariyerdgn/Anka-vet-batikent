@@ -108,7 +108,7 @@ export default function AsilamaPage() {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Aşı Randevusu Alın</h2>
               <p className="text-gray-600 mb-6">Evcil hayvanınızın aşı takvimini kontrol ettirmek için hemen randevu alın.</p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link href="/randevu" className="px-8 py-4 bg-primary-500 text-white font-bold rounded-xl hover:bg-primary-600 transition-colors shadow-lg text-lg">Randevu Al</Link>
+                <Link href="/randevu" className="px-8 py-4 bg-gradient-to-r from-bordo-600 to-bordo-700 text-white font-bold rounded-xl hover:from-bordo-700 hover:to-bordo-800 transition-colors shadow-lg shadow-bordo-600/25 text-lg">Randevu Al</Link>
 <a href="tel:+903123542652" className="px-8 py-4 bg-white text-primary-600 font-bold rounded-xl hover:bg-gray-50 transition-colors border border-primary-200 text-lg">(0312) 354 26 52</a>
                 </div>
             </div>

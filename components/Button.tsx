@@ -13,7 +13,7 @@ interface Props {
 
 const base = 'inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-300';
 const variants = {
-  primary: 'bg-gradient-to-r from-primary-500 to-primary-600 text-white hover:shadow-lg hover:shadow-primary-500/25 hover:-translate-y-0.5',
+  primary: 'bg-gradient-to-r from-bordo-600 to-bordo-700 text-white hover:shadow-lg hover:shadow-bordo-600/25 hover:-translate-y-0.5',
   outline: 'border-2 border-primary-500 text-primary-600 hover:bg-primary-50 hover:-translate-y-0.5',
   secondary: 'bg-gradient-to-r from-secondary-500 to-secondary-600 text-white hover:shadow-lg hover:-translate-y-0.5',
 };

@@ -152,7 +152,7 @@ export default function RandevuPage() {
                   </div>
                 </div>
 
-                <button type="submit" className="w-full py-4 bg-gradient-to-r from-accent-500 to-accent-600 text-white font-bold rounded-xl hover:from-accent-600 hover:to-accent-700 transition-all shadow-lg shadow-accent-500/25 text-lg">
+                <button type="submit" className="w-full py-4 bg-gradient-to-r from-bordo-600 to-bordo-700 text-white font-bold rounded-xl hover:from-bordo-700 hover:to-bordo-800 transition-all shadow-lg shadow-bordo-600/25 text-lg">
                   WhatsApp ile Randevu Oluştur
                 </button>
               </form>

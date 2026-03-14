@@ -48,7 +48,7 @@ export default function KediKisirlastrmaPage() {
               <p className="text-gray-600 mb-6 leading-relaxed">
                 Ameliyat sonrası kediniz aynı gün içinde taburcu edilir. Post-operatif bakım talimatları detaylı olarak verilir ve kontrol muayeneleri tarafımızca takip edilir.
               </p>
-              <Link href="/randevu" className="inline-flex items-center gap-2 px-6 py-3 bg-primary-500 text-white font-bold rounded-xl hover:bg-primary-600 transition-colors shadow-lg">
+              <Link href="/randevu" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-bordo-600 to-bordo-700 text-white font-bold rounded-xl hover:from-bordo-700 hover:to-bordo-800 transition-colors shadow-lg shadow-bordo-600/25">
                 Randevu Al →
               </Link>
             </AnimatedSection>

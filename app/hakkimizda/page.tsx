@@ -138,7 +138,7 @@ export default function HakkimizdaPage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Bize Ulaşın</h2>
           <p className="text-gray-600 mb-8">Sorularınız için bize ulaşın veya randevu oluşturun.</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/randevu" className="px-8 py-4 bg-gradient-to-r from-accent-500 to-accent-600 text-white font-bold rounded-xl hover:from-accent-600 hover:to-accent-700 transition-colors shadow-lg text-lg">
+            <Link href="/randevu" className="px-8 py-4 bg-gradient-to-r from-bordo-600 to-bordo-700 text-white font-bold rounded-xl hover:from-bordo-700 hover:to-bordo-800 transition-colors shadow-lg shadow-bordo-600/25 text-lg">
               Randevu Al
             </Link>
             <Link href="/iletisim" className="px-8 py-4 bg-white text-primary-600 font-bold rounded-xl hover:bg-gray-50 transition-colors border border-primary-200 text-lg">

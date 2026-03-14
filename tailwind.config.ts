@@ -27,6 +27,11 @@ const config: Config = {
           400: '#FFAA2A', 500: '#FF8A00', 600: '#E67A00', 700: '#CC6C00',
           800: '#A35700', 900: '#7A4100',
         },
+        bordo: {
+          50: '#fdf2f4', 100: '#fce7ec', 200: '#f9ced9', 300: '#f4a4b9',
+          400: '#ed7396', 500: '#e34873', 600: '#c92952', 700: '#aa1f42',
+          800: '#8e1c3a', 900: '#781934',
+        },
       },
       animation: {
         'bounce-slow': 'bounce 3s infinite',

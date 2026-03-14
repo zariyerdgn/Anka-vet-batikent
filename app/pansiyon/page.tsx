@@ -50,7 +50,7 @@ export default function PansiyonPage() {
               <p className="text-gray-600 mb-6 leading-relaxed">
                 Veteriner hekim gözetiminde, hijyenik ve konforlu ortamda evcil dostlarınız sizi beklerken mutlu ve sağlıklı olacak. Günlük fotoğraf ve video ile hayvanınızın durumundan haberdar olacaksınız.
               </p>
-              <Link href="/randevu" className="inline-flex items-center gap-2 px-6 py-3 bg-amber-500 text-white font-bold rounded-xl hover:bg-amber-600 transition-colors shadow-lg">
+              <Link href="/randevu" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-bordo-600 to-bordo-700 text-white font-bold rounded-xl hover:from-bordo-700 hover:to-bordo-800 transition-colors shadow-lg shadow-bordo-600/25">
                 Rezervasyon Yap →
               </Link>
             </AnimatedSection>

@@ -156,6 +156,19 @@ export default function Footer() {
             </Link>
           </div>
         </div>
+
+        {/* Developer Credit */}
+        <div className="border-t border-gray-800/50 mt-6 pt-6 text-center">
+          <a
+            href="https://sitenikur.digital/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-primary-400 transition-colors group"
+          >
+            <svg className="w-4 h-4 text-gray-400 group-hover:text-primary-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+            <span className="font-medium group-hover:underline">sitenikur.digital</span> tarafından geliştirilmiştir
+          </a>
+        </div>
       </div>
     </footer>
   );

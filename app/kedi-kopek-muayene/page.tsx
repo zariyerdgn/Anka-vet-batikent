@@ -50,7 +50,7 @@ export default function KediKopekMuayenePage() {
               <p className="text-gray-600 mb-6 leading-relaxed">
                 Düzenli sağlık kontrolleri, hastalıkların erken teşhisi için büyük önem taşır. Yılda en az iki kez genel sağlık kontrolü yaptırmanızı öneriyoruz.
               </p>
-              <Link href="/randevu" className="inline-flex items-center gap-2 px-6 py-3 bg-primary-500 text-white font-bold rounded-xl hover:bg-primary-600 transition-colors shadow-lg">
+              <Link href="/randevu" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-bordo-600 to-bordo-700 text-white font-bold rounded-xl hover:from-bordo-700 hover:to-bordo-800 transition-colors shadow-lg shadow-bordo-600/25">
                 Muayene Randevusu Al →
               </Link>
             </AnimatedSection>

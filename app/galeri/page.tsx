@@ -5,6 +5,10 @@ import Image from 'next/image';
 import AnimatedSection from '@/components/AnimatedSection';
 
 const galleryImages = [
+  { src: '/images/clinic/anka-vet-ekip.png' },
+  { src: '/images/team/ibrahim-yildirim-2.jpeg' },
+  { src: '/images/team/ozge-yildirim-2.jpeg' },
+  { src: '/images/team/emel-eda-sahin-2.jpeg' },
   { src: '/images/hero/klinik-dis.jpeg' },
   { src: '/images/clinic/bekleme-alani.jpeg' },
   { src: '/images/clinic/danisma.jpeg' },

@@ -16,6 +16,22 @@ interface SlideData {
 
 const slides: SlideData[] = [
   {
+    src: '/images/clinic/anka-vet-ekip.png',
+    alt: 'Anka Veteriner Kliniği Ekibi - Batıkent',
+    badge: 'Ekibimiz',
+    title: 'Anka Veteriner Kliniği',
+    subtitle: 'Uzman kadromuzla evcil dostlarınızın yanındayız',
+    type: 'scene',
+  },
+  {
+    src: '/images/team/ibrahim-yildirim-2.jpeg',
+    alt: 'Uzm. Vet. Hek. İbrahim Yıldırım',
+    badge: 'Başhekim',
+    title: 'Uzm. Vet. Hek. İbrahim Yıldırım',
+    subtitle: 'Başhekim • 11+ Yıl Deneyim',
+    type: 'team',
+  },
+  {
     src: '/images/clinic/klinik-dis.jpeg',
     alt: 'Anka Veteriner Kliniği Batıkent - Dış Görünüm',
     badge: 'Kliniğimiz',
@@ -24,11 +40,11 @@ const slides: SlideData[] = [
     type: 'scene',
   },
   {
-    src: '/images/team/ibrahim-yildirim.jpeg',
-    alt: 'Uzm. Vet. Hek. İbrahim Yıldırım',
-    badge: 'Başhekim',
-    title: 'Uzm. Vet. Hek. İbrahim Yıldırım',
-    subtitle: 'Başhekim • 11+ Yıl Deneyim',
+    src: '/images/team/ozge-yildirim-2.jpeg',
+    alt: 'Uzm. Vet. Hek. Özge Yıldırım',
+    badge: 'Uzman Hekim',
+    title: 'Uzm. Vet. Hek. Özge Yıldırım',
+    subtitle: 'Veteriner Hekim • Kurucu Ortak',
     type: 'team',
   },
   {
@@ -40,7 +56,7 @@ const slides: SlideData[] = [
     type: 'scene',
   },
   {
-    src: '/images/team/emel-eda-sahin.jpeg',
+    src: '/images/team/emel-eda-sahin-2.jpeg',
     alt: 'Vet. Hek. Emel Eda Şahin',
     badge: 'Uzman Hekim',
     title: 'Vet. Hek. Emel Eda Şahin',
@@ -54,14 +70,6 @@ const slides: SlideData[] = [
     title: 'Cerrahi Operasyonlar',
     subtitle: 'Steril ortamda güvenli ameliyatlar',
     type: 'scene',
-  },
-  {
-    src: '/images/team/ozge-yildirim.jpeg',
-    alt: 'Uzm. Vet. Hek. Özge Yıldırım',
-    badge: 'Uzman Hekim',
-    title: 'Uzm. Vet. Hek. Özge Yıldırım',
-    subtitle: 'Veteriner Hekim • Kurucu Ortak',
-    type: 'team',
   },
 ];
 
@@ -165,7 +173,7 @@ export default function HeroSlider() {
                     alt={slide.alt}
                     fill
                     className="object-cover"
-                    style={{ objectPosition: 'center 45%' }}
+                    style={{ objectPosition: 'center 25%' }}
                     priority={current <= 1}
                     sizes="100vw"
                   />
@@ -187,7 +195,7 @@ export default function HeroSlider() {
                     alt={slide.alt}
                     fill
                     className="object-cover"
-                    style={{ objectPosition: 'center 38%' }}
+                    style={{ objectPosition: 'center 20%' }}
                     priority={current <= 1}
                     sizes="45vw"
                   />
@@ -230,31 +238,24 @@ export default function HeroSlider() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <AnimatePresence mode="wait">
             <motion.div key={`content-${current}`} className={slide.type === 'team' ? 'md:max-w-[52%]' : ''}>
-              <motion.div custom={0} variants={textVariants} initial="hidden" animate="visible" className="mb-4">
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/15 backdrop-blur-md text-white text-sm font-medium rounded-full border border-white/20">
-                  <span className="w-2 h-2 rounded-full bg-primary-400 animate-pulse" />
-                  {slide.badge}
-                </span>
-              </motion.div>
-
-              <motion.h1 custom={1} variants={textVariants} initial="hidden" animate="visible"
+              <motion.h1 custom={0} variants={textVariants} initial="hidden" animate="visible"
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-3 drop-shadow-2xl leading-tight"
               >
                 {slide.title}
               </motion.h1>
 
-              <motion.p custom={2} variants={textVariants} initial="hidden" animate="visible"
+              <motion.p custom={1} variants={textVariants} initial="hidden" animate="visible"
                 className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl drop-shadow-lg"
               >
                 {slide.subtitle}
               </motion.p>
 
-              <motion.div custom={3} variants={textVariants} initial="hidden" animate="visible"
+              <motion.div custom={2} variants={textVariants} initial="hidden" animate="visible"
                 className="flex flex-col sm:flex-row gap-3"
               >
                 <Link
                   href="/randevu"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-primary-600 text-white font-bold rounded-xl hover:bg-primary-700 hover:scale-105 transition-all shadow-lg shadow-primary-600/30 text-lg"
+                    className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-gradient-to-r from-bordo-600 to-bordo-700 text-white font-bold rounded-xl hover:from-bordo-700 hover:to-bordo-800 hover:scale-105 transition-all shadow-lg shadow-bordo-600/30 text-lg"
                 >
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />

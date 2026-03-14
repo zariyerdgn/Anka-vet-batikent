@@ -146,7 +146,7 @@ export default function Navigation() {
               )}
               <Link
                 href="/randevu"
-                className="ml-2 px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-accent-500 to-accent-600 rounded-xl hover:from-accent-600 hover:to-accent-700 transition-all shadow-lg shadow-accent-500/25 hover:shadow-accent-500/40"
+                  className="ml-2 px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-bordo-600 to-bordo-700 rounded-xl hover:from-bordo-700 hover:to-bordo-800 transition-all shadow-lg shadow-bordo-600/25 hover:shadow-bordo-600/40"
               >
                 Randevu Al
               </Link>
@@ -251,7 +251,7 @@ export default function Navigation() {
                     <Link
                       href="/randevu"
                       onClick={closeMenu}
-                      className="block w-full text-center px-5 py-3 text-white font-semibold bg-gradient-to-r from-accent-500 to-accent-600 rounded-xl shadow-lg"
+                        className="block w-full text-center px-5 py-3 text-white font-semibold bg-gradient-to-r from-bordo-600 to-bordo-700 rounded-xl shadow-lg shadow-bordo-600/25"
                     >
                       Randevu Al
                     </Link>
