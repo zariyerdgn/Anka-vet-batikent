@@ -1,21 +1,30 @@
 import type { Metadata } from 'next';
 import AnimatedSection from '@/components/AnimatedSection';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
+import PawPattern from '@/components/PawPattern';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Sık Sorulan Sorular (SSS)',
-  description: 'Batıkent Anka Veteriner Kliniği hakkında sık sorulan sorular ve cevapları. Aşılama, kısırlaştırma, fiyat bilgisi ve daha fazlası.',
+  description: 'Evcil hayvan sahiplerinin veteriner hekimlere en çok sorduğu sorular. Aşılama, kısırlaştırma, beslenme, parazit koruması ve daha fazlası.',
 };
 
 const sorular = [
   {
-    soru: 'Kliniğiniz nerede?',
-    cevap: 'Batıkent, Yenimahalle / Ankara adresinde bulunmaktayız. Batıkent metro istasyonuna yürüme mesafesindeyiz.',
+    soru: 'Evcil hayvanımı ne sıklıkla veterinere götürmeliyim?',
+    cevap: 'Sağlıklı yetişkin kedi ve köpekler yılda en az bir kez genel kontrol muayenesine getirilmelidir. Yaşlı hayvanlar (7 yaş üzeri) yılda iki kez kontrole gelmelidir. Yavru dönemde ise aşı takvimine uygun olarak daha sık ziyaret gerekir.',
+  },
+  {
+    soru: 'Aşılar neden bu kadar önemli?',
+    cevap: 'Aşılar, evcil hayvanınızı kuduz, parvovirüs, distemper, lösemi gibi ölümcül hastalıklardan korur. Düzenli aşılama hem hayvanınızın hem de çevresindeki diğer hayvanların sağlığını güvence altına alır. Kuduz aşısı yasal zorunluluktur.',
+  },
+  {
+    soru: 'Kısırlaştırma ne zaman yapılmalı?',
+    cevap: 'Kedilerde genellikle 5-6 aylıkken, köpeklerde ise ırk ve büyüklüğüne göre 6-12 ay arasında kısırlaştırma önerilir. Kısırlaştırma; rahim enfeksiyonu, meme tümörleri ve prostat hastalıkları gibi ciddi sorunları önlemeye yardımcı olur.',
   },
   {
     soru: 'Çalışma saatleriniz nedir?',
-    cevap: 'Hafta içi 09:00-19:00, Cumartesi 09:00-17:00 saatleri arasında hizmet veriyoruz. Pazar günleri yalnızca acil durumlar için hizmet verilmektedir.',
+    cevap: 'Pazar dahil her gün 09:00 - 23:00 saatleri arasında hizmet vermekteyiz. Acil durumlar için 7/24 ulaşılabilir durumdayız.',
   },
   {
     soru: 'Randevu almadan gelebilir miyim?',
@@ -23,11 +32,15 @@ const sorular = [
   },
   {
     soru: 'Acil durumlar için 7/24 hizmet var mı?',
-    cevap: 'Evet, acil durumlar için 7/24 telefonla ulaşılabilir durumdayız. 0312 354 26 52 numarasından veya WhatsApp üzerinden bize ulaşabilirsiniz.',
+    cevap: 'Evet, acil durumlar için 7/24 hizmet vermekteyiz. 0554 855 05 90 numarasından veya WhatsApp üzerinden bize ulaşabilirsiniz.',
   },
   {
-    soru: 'Kedi kısırlaştırma ne kadar?',
-    cevap: 'Kedi kısırlaştırma ücretleri hayvanın cinsiyetine ve ağırlığına göre değişiklik göstermektedir. Güncel fiyat bilgisi için bizi aramanızı öneriyoruz.',
+    soru: 'İç ve dış parazit koruması ne sıklıkla yapılmalı?',
+    cevap: 'İç parazit koruması yetişkin hayvanlarda 3 ayda bir, dış parazit koruması özellikle ilkbahar-yaz döneminde aylık olarak uygulanmalıdır.',
+  },
+  {
+    soru: 'Hayvanıma ne yedirmeliyim?',
+    cevap: 'Yaşa, ırka ve sağlık durumuna uygun kaliteli hazır mamalar en güvenilir seçenektir. Soğan, sarımsak, çikolata, üzüm gibi besinler hayvanlar için toksiktir ve kesinlikle verilmemelidir.',
   },
   {
     soru: 'Köpek aşıları ne zaman yapılmalı?',
@@ -35,27 +48,15 @@ const sorular = [
   },
   {
     soru: 'Hangi hayvanları tedavi ediyorsunuz?',
-    cevap: 'Kedi, köpek, kuş, kemirgen gibi evcil hayvanların tüm sağlık hizmetlerini sunuyoruz.',
+    cevap: 'Kedi, köpek, kuş, tavşan, hamster, guinea pig gibi evcil hayvanların tüm sağlık hizmetlerini sunuyoruz.',
+  },
+  {
+    soru: 'Ameliyat sonrası nelere dikkat etmeliyim?',
+    cevap: 'Yara bölgesinin temiz tutulması, elizabeth tasma kullanılması, aktivitenin kısıtlanması ve kontrol muayenelerine düzenli gelinmesi büyük önem taşır.',
   },
   {
     soru: 'Ödeme yöntemleri nelerdir?',
     cevap: 'Nakit, kredi kartı ve banka kartı ile ödeme yapabilirsiniz. Taksit seçenekleri mevcuttur.',
-  },
-  {
-    soru: 'Pet pansiyon hizmetiniz var mı?',
-    cevap: 'Evet, veteriner hekim gözetiminde, hijyenik ve konforlu ortamda pet pansiyon hizmetimiz bulunmaktadır. Detaylı bilgi için bizi arayabilirsiniz.',
-  },
-  {
-    soru: 'Ameliyat sonrası bakım nasıl yapılır?',
-    cevap: 'Ameliyat sonrası detaylı bakım talimatları hekimlerimiz tarafından verilir. Kontrol muayeneleri planlanır ve telefonla takip yapılır.',
-  },
-  {
-    soru: 'Kliniğinizde hangi cihazlar mevcut?',
-    cevap: 'Ultrasonografi, röntgen, EKG, kan sayım cihazı, biyokimya cihazı, anestezi cihazı, sterilizatör ve tam donanımlı ameliyathane kliniğimizde mevcuttur.',
-  },
-  {
-    soru: 'Evde veteriner hizmeti var mı?',
-    cevap: 'Evcil hayvanlar için klinik ortamında hizmet verilmektedir. Özel durumlar için bize ulaşabilirsiniz.',
   },
 ];
 
@@ -63,7 +64,6 @@ export default function SikSorulanSorularPage() {
   return (
     <>
       <BreadcrumbSchema items={[{ name: 'Ana Sayfa', href: '/' }, { name: 'Sık Sorulan Sorular', href: '/sik-sorulan-sorular' }]} />
-
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -79,18 +79,20 @@ export default function SikSorulanSorularPage() {
         }}
       />
 
-      <section className="relative py-20 bg-gradient-to-br from-primary-600 to-primary-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative py-20 bg-gradient-to-br from-primary-600 to-primary-800 overflow-hidden">
+        <PawPattern className="text-white opacity-40" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
             <svg className="w-12 h-12 text-white mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Sık Sorulan Sorular</h1>
-            <p className="text-lg text-primary-100 max-w-2xl mx-auto">Merak ettiğiniz tüm sorulara cevaplar</p>
+            <p className="text-lg text-primary-100 max-w-2xl mx-auto">Evcil hayvan sahiplerinin en çok merak ettiği konular</p>
           </AnimatedSection>
         </div>
       </section>
 
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 overflow-hidden">
+        <PawPattern className="text-primary-300" />
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="space-y-4">
               {sorular.map((s, i) => (
@@ -111,12 +113,20 @@ export default function SikSorulanSorularPage() {
           </AnimatedSection>
 
           <AnimatedSection>
-            <div className="mt-16 bg-primary-50 rounded-2xl p-8 text-center">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Başka Sorunuz mu Var?</h2>
-              <p className="text-gray-600 mb-6">Cevabını bulamadığınız sorular için bize ulaşabilirsiniz.</p>
+            <div className="mt-16 bg-gradient-to-r from-red-50 to-red-100 rounded-2xl p-8 text-center border border-red-200">
+              <div className="flex justify-center mb-4">
+                <div className="w-14 h-14 bg-red-500 rounded-full flex items-center justify-center">
+                  <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                </div>
+              </div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">Acil Veteriner Yardımı</h2>
+              <p className="text-gray-600 mb-6">7/24 acil durumlar için bizi hemen arayın</p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link href="/iletisim" className="px-8 py-4 bg-primary-500 text-white font-bold rounded-xl hover:bg-primary-600 transition-colors shadow-lg text-lg">İletişim</Link>
-                <a href="tel:+903123542652" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-600 font-bold rounded-xl hover:bg-gray-50 transition-colors border border-primary-200 text-lg"><svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg> (0312) 354 26 52</a>
+                <a href="tel:+905548550590" className="inline-flex items-center gap-3 px-8 py-4 bg-red-500 text-white font-bold rounded-xl hover:bg-red-600 transition-colors shadow-lg text-lg">
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                  0554 855 05 90
+                </a>
+                <Link href="/iletisim" className="px-8 py-4 bg-white text-primary-600 font-bold rounded-xl hover:bg-gray-50 transition-colors border border-primary-200 text-lg">İletişim</Link>
               </div>
             </div>
           </AnimatedSection>

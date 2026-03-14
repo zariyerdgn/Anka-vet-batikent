@@ -119,9 +119,9 @@ const schemaData = {
       '@type': 'FAQPage',
       mainEntity: [
         { '@type': 'Question', name: 'Batıkent\'te veteriner kliniği var mı?', acceptedAnswer: { '@type': 'Answer', text: 'Evet, Anka Veteriner Kliniği Batıkent\'te hizmet vermektedir. Evcil hayvan sağlığı alanında uzman kadromuzla hizmetinizdeyiz.' } },
-        { '@type': 'Question', name: 'Batıkent\'te 7/24 acil veteriner var mı?', acceptedAnswer: { '@type': 'Answer', text: 'Evet, Anka Veteriner Kliniği 7/24 acil veteriner hizmeti sunmaktadır. Acil durumlar için (0312) 354 26 52 numaralı telefondan bize ulaşabilirsiniz.' } },
+        { '@type': 'Question', name: 'Batıkent\'te 7/24 acil veteriner var mı?', acceptedAnswer: { '@type': 'Answer', text: 'Evet, Anka Veteriner Kliniği 7/24 acil veteriner hizmeti sunmaktadır. Acil durumlar için 0554 855 05 90 numaralı telefondan bize ulaşabilirsiniz.' } },
         { '@type': 'Question', name: 'Batıkent\'te kedi köpek veterineri var mı?', acceptedAnswer: { '@type': 'Answer', text: 'Evet, kliniğimizde kedi ve köpek muayene, aşılama, kısırlaştırma ve cerrahi operasyonlar dahil tüm veteriner hizmetleri sunulmaktadır.' } },
-        { '@type': 'Question', name: 'Batıkent veteriner ücretleri ne kadar?', acceptedAnswer: { '@type': 'Answer', text: 'Veteriner ücretlerimiz yapılacak işleme göre değişmektedir. Detaylı bilgi için (0312) 354 26 52 numaralı telefondan veya WhatsApp üzerinden bize ulaşabilirsiniz.' } },
+        { '@type': 'Question', name: 'Batıkent veteriner ücretleri ne kadar?', acceptedAnswer: { '@type': 'Answer', text: 'Veteriner ücretlerimiz yapılacak işleme göre değişmektedir. Detaylı bilgi için 0554 855 05 90 numaralı telefondan veya WhatsApp üzerinden bize ulaşabilirsiniz.' } },
       ],
     },
     {

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import AnimatedSection from '@/components/AnimatedSection';
 import StatCard from '@/components/StatCard';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
+import PawPattern from '@/components/PawPattern';
 
 export const metadata: Metadata = {
   title: 'Hakkımızda - Bizi Tanıyın',
@@ -31,6 +32,7 @@ export default function HakkimizdaPage() {
 
       {/* Hero */}
       <section className="relative py-20 bg-gradient-to-br from-primary-600 to-primary-800 overflow-hidden">
+        <PawPattern className="text-white opacity-40" />
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 right-10 w-60 h-60 bg-white rounded-full blur-3xl" />
         </div>
@@ -45,8 +47,9 @@ export default function HakkimizdaPage() {
       </section>
 
       {/* Story */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 overflow-hidden">
+        <PawPattern className="text-primary-300" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <AnimatedSection direction="left">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
@@ -80,8 +83,9 @@ export default function HakkimizdaPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 overflow-hidden">
+        <PawPattern className="text-primary-200" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8">
             <AnimatedSection direction="left">
               <div className="bg-gradient-to-br from-primary-50 to-primary-100 rounded-2xl p-8 h-full border border-primary-200">

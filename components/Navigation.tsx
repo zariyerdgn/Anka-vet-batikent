@@ -88,17 +88,9 @@ export default function Navigation() {
                   priority
                 />
               </div>
-              <div className="flex flex-col">
-                <span className="text-lg font-bold bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">
-                  Anka Veteriner Kliniği
-                </span>
-                <span className="text-[10px] text-gray-500 font-medium -mt-0.5">
-                  Uzm. Vet. Hek. İbrahim Yıldırım
-                </span>
-                <span className="text-[9px] text-gray-400 -mt-0.5">
-                  Batıkent - Ankara
-                </span>
-              </div>
+              <span className="text-lg font-bold bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">
+                Anka Veteriner Kliniği
+              </span>
             </Link>
 
             {/* Desktop Menu */}

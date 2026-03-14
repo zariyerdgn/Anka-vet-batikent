@@ -1,12 +1,15 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface Hizmet {
   name: string;
   desc: string;
+  detailedDesc?: string;
   subItems: string[];
+  images?: string[];
 }
 
 interface HizmetlerAccordionProps {
@@ -65,11 +68,16 @@ export default function HizmetlerAccordion({ hizmetler }: HizmetlerAccordionProp
                   transition={{ duration: 0.3, ease: 'easeInOut' }}
                   className="overflow-hidden"
                 >
-                  <div className="px-6 pb-5 pt-0">
+                  <div className="px-6 pb-6 pt-0">
                     <div className="border-t border-gray-100 pt-4">
                       <p className="text-gray-600 leading-relaxed mb-4">{hizmet.desc}</p>
+
+                      {hizmet.detailedDesc && (
+                        <p className="text-gray-500 text-sm leading-relaxed mb-4">{hizmet.detailedDesc}</p>
+                      )}
+
                       {hizmet.subItems.length > 0 && (
-                        <div className="space-y-2">
+                        <div className="mb-4">
                           <p className="text-sm font-semibold text-primary-700 mb-2">Alt Hizmetler:</p>
                           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                             {hizmet.subItems.map((sub) => (
@@ -81,6 +89,22 @@ export default function HizmetlerAccordion({ hizmetler }: HizmetlerAccordionProp
                               </li>
                             ))}
                           </ul>
+                        </div>
+                      )}
+
+                      {hizmet.images && hizmet.images.length > 0 && (
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-4">
+                          {hizmet.images.map((img, i) => (
+                            <div key={i} className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                              <Image
+                                src={img}
+                                alt={`${hizmet.name} - ${i + 1}`}
+                                fill
+                                className="object-cover hover:scale-105 transition-transform duration-500"
+                                sizes="(max-width: 640px) 45vw, 200px"
+                              />
+                            </div>
+                          ))}
                         </div>
                       )}
                     </div>

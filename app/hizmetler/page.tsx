@@ -3,6 +3,7 @@ import AnimatedSection from '@/components/AnimatedSection';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 import Link from 'next/link';
 import HizmetlerAccordion from '@/components/HizmetlerAccordion';
+import PawPattern from '@/components/PawPattern';
 
 export const metadata: Metadata = {
   title: 'Hizmetlerimiz',
@@ -19,6 +20,20 @@ const hizmetler = [
     name: 'Anestezi ve Reanimasyon',
     desc: 'Güvenli anestezi uygulamaları ve yoğun bakım hizmetleri.',
     subItems: [],
+  },
+  {
+    name: 'Ağız ve Diş Sağlığı',
+    desc: 'Evcil hayvanların ağız ve diş sağlığı; diş taşı temizliği (detartraj), diş çekimi, diş kırıkları onarımı ve periodontal hastalıkların tedavisi.',
+    detailedDesc: 'Düzenli ağız bakımı, evcil hayvanınızın genel sağlığı için büyük önem taşır. Diş taşı birikimi zamanla diş eti iltihabına, diş kaybına ve bakteriyel enfeksiyonlara yol açabilir. Kliniğimizde ultrasonik detartraj cihazı ile güvenli diş temizliği, dijital dental röntgen ile diş kökü değerlendirmesi ve gerekli durumlarda cerrahi diş çekimi gerçekleştirilmektedir.',
+    subItems: ['Diş Taşı Temizliği (Detartraj)', 'Diş Çekimi', 'Periodontal Tedavi', 'Dental Röntgen'],
+    images: [
+      '/images/services/agiz-dis/agiz-dis-1.jpeg',
+      '/images/services/agiz-dis/agiz-dis-2.jpeg',
+      '/images/services/agiz-dis/agiz-dis-3.jpeg',
+      '/images/services/agiz-dis/agiz-dis-4.jpeg',
+      '/images/services/agiz-dis/agiz-dis-5.jpeg',
+      '/images/services/agiz-dis/agiz-dis-6.jpeg',
+    ],
   },
   {
     name: 'Beslenme ve Diyet',
@@ -40,6 +55,29 @@ const hizmetler = [
       'Ekokardiyografi',
       'EKG',
       'Endoskopi',
+    ],
+  },
+  {
+    name: 'Ekokardiyografi',
+    desc: 'Kalbin yapısını ve fonksiyonlarını ultrason ile değerlendiren ileri görüntüleme yöntemidir. Kalp kapak hastalıkları, kardiyomiyopatiler ve doğuştan kalp defektlerinin teşhisinde kullanılır.',
+    detailedDesc: 'Ekokardiyografi, evcil hayvanlarda kalp hastalıklarının tanısında altın standart yöntemdir. Renkli Doppler ile kan akım hızı ve yönü değerlendirilir, kalp odacıklarının boyutları ve kas kalınlıkları ölçülür.',
+    subItems: ['M-Mode Ekokardiyografi', 'Renkli Doppler', 'Kalp Kapak Değerlendirme'],
+    images: [
+      '/images/services/ekokardiyografi/ekokardiyografi-1.jpeg',
+      '/images/services/ekokardiyografi/ekokardiyografi-2.jpeg',
+      '/images/services/ekokardiyografi/ekokardiyografi-3.jpeg',
+      '/images/services/ekokardiyografi/ekokardiyografi-4.jpeg',
+    ],
+  },
+  {
+    name: 'Endoskopi',
+    desc: 'Sindirim sistemi, solunum yolları ve diğer vücut boşluklarının kameralı görüntüleme ile incelenmesi. Yabancı cisim çıkarma, biyopsi alma ve tanı amaçlı kullanılır.',
+    detailedDesc: 'Endoskopi sayesinde cerrahi müdahale gerektirmeden sindirim kanalındaki sorunlar tespit edilebilir, yabancı cisimler çıkarılabilir ve biyopsi örnekleri alınabilir.',
+    subItems: ['Gastroskopi', 'Kolonoskopi', 'Bronkoskopi', 'Yabancı Cisim Çıkarma'],
+    images: [
+      '/images/services/endoskopi/endoskopi-1.jpeg',
+      '/images/services/endoskopi/endoskopi-2.jpeg',
+      '/images/services/endoskopi/endoskopi-3.jpeg',
     ],
   },
   {
@@ -66,6 +104,24 @@ const hizmetler = [
       'Eklem Cerrahisi',
       'Nöroşirurji',
     ],
+    images: [
+      '/images/services/operasyon/operasyon-1.jpeg',
+      '/images/services/operasyon/operasyon-2.jpeg',
+      '/images/services/operasyon/operasyon-3.jpeg',
+      '/images/services/operasyon/operasyon-4.jpeg',
+      '/images/services/operasyon/operasyon-5.jpeg',
+    ],
+  },
+  {
+    name: 'Eklem Cerrahisi',
+    desc: 'Çapraz bağ yırtıkları, patella lüksasyonu, kalça displazisi ve kırık onarımı gibi ortopedik sorunların cerrahi tedavisi.',
+    detailedDesc: 'Eklem cerrahisinde TPLO, TTA, plak-vida sistemi ve eksternal fiksatör gibi modern teknikler uygulanmaktadır. Ameliyat sonrası fizik tedavi programı ile tam iyileşme hedeflenir.',
+    subItems: ['Çapraz Bağ Cerrahisi (TPLO/TTA)', 'Patella Lüksasyonu', 'Kalça Displazisi', 'Kırık Onarımı'],
+    images: [
+      '/images/services/eklem-cerrahi/eklem-cerrahi-1.jpeg',
+      '/images/services/eklem-cerrahi/eklem-cerrahi-2.jpeg',
+      '/images/services/eklem-cerrahi/eklem-cerrahi-3.jpeg',
+    ],
   },
   {
     name: 'Görüntüleme Ünitesi',
@@ -80,6 +136,27 @@ const hizmetler = [
     ],
   },
   {
+    name: 'X-Ray DR (Dijital Röntgen)',
+    desc: 'Dijital röntgen sistemi ile kemik, eklem, göğüs ve karın bölgesi görüntüleme. Anında yüksek çözünürlüklü görüntüler elde edilir.',
+    detailedDesc: 'Dijital röntgen, geleneksel röntgene göre daha düşük radyasyon dozu ile daha kaliteli görüntüler sunar. Kırıklar, eklem sorunları, akciğer ve karın hastalıklarının teşhisinde temel görüntüleme yöntemidir.',
+    subItems: ['Kemik ve Eklem Röntgeni', 'Göğüs Röntgeni', 'Karın Röntgeni', 'Dental Röntgen'],
+    images: [
+      '/images/services/xray/xray-1.jpeg',
+      '/images/services/xray/xray-2.jpeg',
+    ],
+  },
+  {
+    name: 'Ultrasonografi',
+    desc: 'Karın içi organlar, gebelik takibi ve yumuşak doku değerlendirmesi için ultrasonografik inceleme.',
+    detailedDesc: 'Ultrasonografi ağrısız ve radyasyonsuz bir görüntüleme yöntemidir. Karaciğer, böbrek, dalak, mesane gibi organların detaylı değerlendirilmesinde kullanılır.',
+    subItems: ['Abdominal Ultrason', 'Gebelik Takibi', 'Renkli Doppler', 'Yumuşak Doku İnceleme'],
+    images: [
+      '/images/services/ultrasonografi/ultrasonografi-1.jpeg',
+      '/images/services/ultrasonografi/ultrasonografi-2.jpeg',
+      '/images/services/ultrasonografi/ultrasonografi-3.jpeg',
+    ],
+  },
+  {
     name: 'Laboratuvar',
     desc: 'Tam donanımlı laboratuvarımızda hızlı ve güvenilir test sonuçları.',
     subItems: [
@@ -90,11 +167,47 @@ const hizmetler = [
       'PCR Testleri',
       'Koagülasyon Cihazı',
     ],
+    images: [
+      '/images/services/laboratuvar/lab-1.jpeg',
+      '/images/services/laboratuvar/lab-2.jpeg',
+      '/images/services/laboratuvar/lab-3.jpeg',
+      '/images/services/laboratuvar/lab-4.jpeg',
+      '/images/services/laboratuvar/lab-5.jpeg',
+      '/images/services/laboratuvar/lab-6.jpeg',
+      '/images/services/laboratuvar/lab-7.jpeg',
+      '/images/services/laboratuvar/lab-8.jpeg',
+      '/images/services/laboratuvar/lab-9.jpeg',
+    ],
+  },
+  {
+    name: 'Sitoloji',
+    desc: 'Hücresel düzeyde inceleme ile tümör, enfeksiyon ve iltihabi hastalıkların teşhisi. İnce iğne aspirasyon biyopsisi ve sitolojik değerlendirme yapılır.',
+    detailedDesc: 'Sitolojik inceleme, doku örneklerinin mikroskop altında hücre düzeyinde değerlendirilmesidir. Kitle ve tümör tanısı, lenf nodu değerlendirmesi ve vücut sıvılarının analizi bu yöntemle gerçekleştirilir.',
+    subItems: ['İnce İğne Aspirasyon Biyopsisi', 'Tümör Sitolojisi', 'Vücut Sıvısı Analizi', 'Kemik İliği Değerlendirme'],
+    images: [
+      '/images/services/sitoloji/sitoloji-1.jpeg',
+      '/images/services/sitoloji/sitoloji-2.jpeg',
+      '/images/services/sitoloji/sitoloji-3.jpeg',
+      '/images/services/sitoloji/sitoloji-4.jpeg',
+      '/images/services/sitoloji/sitoloji-5.jpeg',
+      '/images/services/sitoloji/sitoloji-6.jpeg',
+      '/images/services/sitoloji/sitoloji-7.jpeg',
+      '/images/services/sitoloji/sitoloji-8.jpeg',
+      '/images/services/sitoloji/sitoloji-9.jpeg',
+      '/images/services/sitoloji/sitoloji-10.jpeg',
+    ],
   },
   {
     name: 'Göz Hastalıkları',
-    desc: 'Evcil hayvanların göz sağlığı, teşhis ve tedavi hizmetleri.',
-    subItems: [],
+    desc: 'Evcil hayvanların göz sağlığı, teşhis ve tedavi hizmetleri. Göz içi basınç ölçümü, gözyaşı testleri ve fundus muayenesi yapılmaktadır.',
+    detailedDesc: 'Katarakt, glokom, kornea ülserleri, kuru göz sendromu ve göz kapağı hastalıkları gibi sorunların tanı ve tedavisi gerçekleştirilir.',
+    subItems: ['Katarakt Değerlendirme', 'Glokom Testi', 'Kornea Ülseri Tedavisi', 'Göz Kapağı Cerrahisi'],
+    images: [
+      '/images/services/goz/goz-1.jpeg',
+      '/images/services/goz/goz-2.jpeg',
+      '/images/services/goz/goz-3.jpeg',
+      '/images/services/goz/goz-4.jpeg',
+    ],
   },
   {
     name: 'Yoğun Bakım',
@@ -110,6 +223,7 @@ export default function HizmetlerPage() {
 
       {/* Hero */}
       <section className="relative py-20 bg-gradient-to-br from-primary-600 to-primary-800 overflow-hidden">
+        <PawPattern className="text-white opacity-40" />
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-40 h-40 bg-white rounded-full blur-3xl" />
           <div className="absolute bottom-10 right-10 w-60 h-60 bg-white rounded-full blur-3xl" />
@@ -125,8 +239,9 @@ export default function HizmetlerPage() {
       </section>
 
       {/* Services Accordion */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 overflow-hidden">
+        <PawPattern className="text-primary-300" />
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-3">Tüm Hizmetlerimiz</h2>

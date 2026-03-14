@@ -37,8 +37,8 @@ export default function YakinimdaVeterinerPage() {
               </p>
               <div className="bg-primary-50 rounded-2xl p-6 inline-block">
                 <p className="text-primary-700 font-bold text-lg">Batıkent, Yenimahalle / Ankara</p>
-                <p className="text-primary-600 mt-1">Hafta içi: 09:00 - 19:00 | Cumartesi: 09:00 - 17:00</p>
-                <p className="text-red-600 font-medium mt-1">Pazar: Sadece Acil Durumlar</p>
+                <p className="text-primary-600 mt-1">Her Gün (Pazar dahil): 09:00 - 23:00</p>
+                <p className="text-red-600 font-medium mt-1">Acil Durumlar: 7/24 - 0554 855 05 90</p>
               </div>
             </div>
           </AnimatedSection>
