@@ -78,7 +78,7 @@ export default function Navigation() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group" onClick={closeMenu}>
-              <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-gradient-to-br from-primary-500 to-primary-700 p-0.5">
+              <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-white p-0.5 shadow-sm border border-gray-100">
                 <Image
                   src="/images/logo/anka-logo.jpeg"
                   alt="Anka Veteriner Kliniği Logo"

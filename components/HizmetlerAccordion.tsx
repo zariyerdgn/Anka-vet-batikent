@@ -93,18 +93,22 @@ export default function HizmetlerAccordion({ hizmetler }: HizmetlerAccordionProp
                       )}
 
                       {hizmet.images && hizmet.images.length > 0 && (
-                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-4">
-                          {hizmet.images.map((img, i) => (
-                            <div key={i} className="relative aspect-[4/3] rounded-xl overflow-hidden">
-                              <Image
-                                src={img}
-                                alt={`${hizmet.name} - ${i + 1}`}
-                                fill
-                                className="object-cover hover:scale-105 transition-transform duration-500"
-                                sizes="(max-width: 640px) 45vw, 200px"
-                              />
-                            </div>
-                          ))}
+                        <div className="mt-4">
+                          <p className="text-sm font-semibold text-gray-500 mb-3">Görseller</p>
+                          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                            {hizmet.images.map((img, i) => (
+                              <div key={i} className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-md group/img border border-gray-100">
+                                <Image
+                                  src={img}
+                                  alt={`${hizmet.name} - ${i + 1}`}
+                                  fill
+                                  className="object-cover group-hover/img:scale-110 transition-transform duration-700"
+                                  sizes="(max-width: 640px) 45vw, 200px"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300" />
+                              </div>
+                            ))}
+                          </div>
                         </div>
                       )}
                     </div>

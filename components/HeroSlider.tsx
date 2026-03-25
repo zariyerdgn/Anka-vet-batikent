@@ -32,14 +32,6 @@ const slides: SlideData[] = [
     type: 'team',
   },
   {
-    src: '/images/clinic/klinik-dis.jpeg',
-    alt: 'Anka Veteriner Kliniği Batıkent - Dış Görünüm',
-    badge: 'Kliniğimiz',
-    title: 'Anka Veteriner Kliniği',
-    subtitle: 'Batıkent, Ankara',
-    type: 'scene',
-  },
-  {
     src: '/images/team/ozge-yildirim-2.jpeg',
     alt: 'Uzm. Vet. Hek. Özge Yıldırım',
     badge: 'Uzman Hekim',
@@ -135,7 +127,7 @@ export default function HeroSlider() {
 
   return (
     <section
-      className="relative w-full h-[75vh] md:h-[88vh] overflow-hidden bg-gray-950"
+      className="relative w-full h-[50vh] md:h-[65vh] overflow-hidden bg-gray-950"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

@@ -19,8 +19,8 @@ export default function AsilamaPage() {
   const kopekAsilari = [
     { name: 'Karma Aşı (DHPPi)', desc: 'Distemper, hepatit, parvovirüs, parainfluenza koruması', when: '6-8. hafta, tekrar her 3-4 haftada bir' },
     { name: 'Kuduz Aşısı', desc: 'Yasal zorunluluk, ölümcül hastalığa karşı koruma', when: '12. haftadan itibaren' },
-    { name: 'Corona + Leptospirosis', desc: 'Enfeksiyöz hastalıklara karşı ek koruma', when: '8. haftadan itibaren' },
-    { name: 'Kennel Cough (KC)', desc: 'Barınak öksürüğüne karşı koruma', when: 'Sosyal ortama girmeden önce' },
+    { name: 'Corona + Leptospirosis', desc: 'Corona virüsü köpeklerde ishal ve kusma gibi sindirim sistemi sorunlarına yol açar. Leptospiroz ise böbrek ve karaciğer yetmezliğine neden olabilen bakteriyel bir enfeksiyondur. Bu aşı her iki hastalığa karşı koruma sağlar.', when: '8. haftadan itibaren' },
+    { name: 'Kennel Cough (KC)', desc: 'Bordetella bronchiseptica ve parainfluenza virüsünün neden olduğu bulaşıcı bir solunum yolu enfeksiyonudur (Bronşit). Özellikle kalabalık ortamlarda hızla yayılır; öksürük, burun akıntısı ve halsizlik gibi belirtilere neden olur.', when: 'Sosyal ortama girmeden önce' },
     { name: 'Lyme Aşısı', desc: 'Kene kaynaklı Lyme hastalığına karşı koruma', when: '12. haftadan itibaren, yıllık tekrar' },
   ];
 
