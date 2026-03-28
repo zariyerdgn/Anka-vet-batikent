@@ -256,20 +256,7 @@ export default function HizmetlerPage() {
               <p className="text-gray-600">Detayları görmek için hizmete tıklayın</p>
             </div>
           </AnimatedSection>
-          <HizmetlerAccordion hizmetler={hizmetler.filter(h => !['Görüntüleme Ünitesi','X-Ray DR (Dijital Röntgen)','Ultrasonografi','Laboratuvar','Sitoloji','Ekokardiyografi','Endoskopi'].includes(h.name))} />
-
-          {/* Teşhis Yöntemleri Ana Başlık */}
-          <AnimatedSection>
-            <div className="text-center mt-20 mb-12">
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-secondary-100 text-secondary-700 rounded-full text-sm font-medium mb-4">
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-                Tanı ve Görüntüleme
-              </span>
-              <h2 className="text-3xl font-bold text-gray-900 mb-3">Teşhis Yöntemleri</h2>
-              <p className="text-gray-600">Modern cihazlarımızla hızlı ve doğru tanı</p>
-            </div>
-          </AnimatedSection>
-          <HizmetlerAccordion hizmetler={hizmetler.filter(h => ['Görüntüleme Ünitesi','X-Ray DR (Dijital Röntgen)','Ultrasonografi','Laboratuvar','Sitoloji','Ekokardiyografi','Endoskopi'].includes(h.name))} />
+          <HizmetlerAccordion hizmetler={hizmetler} />
         </div>
       </section>
 

@@ -19,7 +19,7 @@ const diseases = [
     desc: 'Kedilerde görülen bulaşıcı hastalıklar ve paraziter enfeksiyonların uzman tedavisi.',
     items: [
       { sub: 'Enfeksiyöz', list: ['FIP', 'FIV', 'FeLV', 'Kedi Nezlesi'] },
-      { sub: 'Paraziter', list: ['Pire', 'Kulak Aşurusu', 'İç Parazitler', 'Mantar'] },
+      { sub: 'Paraziter', list: ['Pire', 'Kulak Uyuzu', 'İç Parazitler', 'Mantar'] },
     ],
   },
   {

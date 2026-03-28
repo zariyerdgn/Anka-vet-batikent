@@ -24,7 +24,7 @@ const slides: SlideData[] = [
     type: 'scene',
   },
   {
-    src: '/images/team/ibrahim-yildirim-2.jpeg',
+    src: '/images/team/vet-ibrahim-yildirim.jpeg',
     alt: 'Uzm. Vet. Hek. İbrahim Yıldırım',
     badge: 'Başhekim',
     title: 'Uzm. Vet. Hek. İbrahim Yıldırım',

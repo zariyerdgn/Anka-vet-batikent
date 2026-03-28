@@ -20,6 +20,44 @@
 			"type": "shell",
 			"command": "cd /Users/zariyedagasan/Desktop/Anka-vet-batıkent && node test-pages.js",
 			"group": "test"
+		},
+		{
+			"label": "Next Dev",
+			"type": "shell",
+			"command": "cd /Users/zariyedagasan/Desktop/batikent-anka-vet && npm run dev",
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Next Dev Server",
+			"type": "shell",
+			"command": "cd /Users/zariyedagasan/Desktop/batikent-anka-vet && npm run dev",
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Anka Vet Dev",
+			"type": "shell",
+			"command": "cd /Users/zariyedagasan/Desktop/batikent-anka-vet && rm -rf .next && npm run dev",
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Dev Server",
+			"type": "shell",
+			"command": "cd /Users/zariyedagasan/Desktop/batikent-anka-vet && npm run dev",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Dev Server",
+			"type": "shell",
+			"command": "cd /Users/zariyedagasan/Desktop/batikent-anka-vet && npm run dev",
+			"isBackground": true,
+			"problemMatcher": []
 		}
 	]
 }
