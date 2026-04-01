@@ -172,112 +172,112 @@ export default function Navigation() {
             </button>
           </div>
         </div>
+      </nav>
 
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {mobileOpen && (
-            <>
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="fixed inset-0 bg-black/50 z-40 lg:hidden"
-                onClick={closeMenu}
-              />
-              <motion.div
-                initial={{ x: '100%' }}
-                animate={{ x: 0 }}
-                exit={{ x: '100%' }}
-                transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                className="fixed top-0 right-0 bottom-0 w-80 bg-white z-50 lg:hidden overflow-y-auto shadow-2xl"
-              >
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-8">
-                    <span className="text-lg font-bold text-primary-600">Menü</span>
-                    <button onClick={closeMenu} className="p-2 rounded-lg hover:bg-gray-100" aria-label="Menüyü kapat">
-                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                      </svg>
-                    </button>
-                  </div>
-                  <div className="space-y-1">
-                    {menuItems.map((item) =>
-                      item.submenu ? (
-                        <div key={item.name}>
-                          <button
-                            onClick={() => setMobileSubmenuOpen(!mobileSubmenuOpen)}
-                            className="w-full flex items-center justify-between px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-xl transition-colors font-medium"
-                          >
-                            {item.name}
-                            <svg className={`w-4 h-4 transition-transform ${mobileSubmenuOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                            </svg>
-                          </button>
-                          <AnimatePresence>
-                            {mobileSubmenuOpen && (
-                              <motion.div
-                                initial={{ height: 0, opacity: 0 }}
-                                animate={{ height: 'auto', opacity: 1 }}
-                                exit={{ height: 0, opacity: 0 }}
-                                className="overflow-hidden ml-4"
-                              >
-                                {item.submenu.map((sub) => (
-                                  <Link
-                                    key={sub.name}
-                                    href={sub.href}
-                                    onClick={closeMenu}
-                                    className="block px-4 py-2.5 text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors"
-                                  >
-                                    {sub.name}
-                                  </Link>
-                                ))}
-                              </motion.div>
-                            )}
-                          </AnimatePresence>
-                        </div>
-                      ) : (
-                        <Link
-                          key={item.name}
-                          href={item.href}
-                          onClick={closeMenu}
-                          className="block px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-xl transition-colors font-medium"
+      {/* Mobile Menu — rendered outside nav to avoid backdrop-filter containing block */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/50 z-[60] lg:hidden"
+              onClick={closeMenu}
+            />
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              className="fixed top-0 right-0 bottom-0 w-80 bg-white z-[70] lg:hidden overflow-y-auto shadow-2xl"
+            >
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-8">
+                  <span className="text-lg font-bold text-primary-600">Menü</span>
+                  <button onClick={closeMenu} className="p-2 rounded-lg hover:bg-gray-100" aria-label="Menüyü kapat">
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+                <div className="space-y-1">
+                  {menuItems.map((item) =>
+                    item.submenu ? (
+                      <div key={item.name}>
+                        <button
+                          onClick={() => setMobileSubmenuOpen(!mobileSubmenuOpen)}
+                          className="w-full flex items-center justify-between px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-xl transition-colors font-medium"
                         >
                           {item.name}
-                        </Link>
-                      )
-                    )}
-                  </div>
-                  <div className="mt-6 pt-6 border-t">
-                    <Link
-                      href="/randevu"
-                      onClick={closeMenu}
-                        className="block w-full text-center px-5 py-3 text-white font-semibold bg-gradient-to-r from-bordo-600 to-bordo-700 rounded-xl shadow-lg shadow-bordo-600/25"
+                          <svg className={`w-4 h-4 transition-transform ${mobileSubmenuOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+                        <AnimatePresence>
+                          {mobileSubmenuOpen && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: 'auto', opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              className="overflow-hidden ml-4"
+                            >
+                              {item.submenu.map((sub) => (
+                                <Link
+                                  key={sub.name}
+                                  href={sub.href}
+                                  onClick={closeMenu}
+                                  className="block px-4 py-2.5 text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors"
+                                >
+                                  {sub.name}
+                                </Link>
+                              ))}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    ) : (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        onClick={closeMenu}
+                        className="block px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-xl transition-colors font-medium"
+                      >
+                        {item.name}
+                      </Link>
+                    )
+                  )}
+                </div>
+                <div className="mt-6 pt-6 border-t">
+                  <Link
+                    href="/randevu"
+                    onClick={closeMenu}
+                    className="block w-full text-center px-5 py-3 text-white font-semibold bg-gradient-to-r from-bordo-600 to-bordo-700 rounded-xl shadow-lg shadow-bordo-600/25"
+                  >
+                    Randevu Al
+                  </Link>
+                  <div className="mt-4 flex gap-3">
+                    <a
+                      href="tel:+905548550590"
+                      className="flex-1 text-center px-4 py-2.5 text-sm font-medium text-primary-600 border border-primary-200 rounded-xl hover:bg-primary-50 transition-colors"
                     >
-                      Randevu Al
-                    </Link>
-                    <div className="mt-4 flex gap-3">
-                      <a
-                        href="tel:+905548550590"
-                        className="flex-1 text-center px-4 py-2.5 text-sm font-medium text-primary-600 border border-primary-200 rounded-xl hover:bg-primary-50 transition-colors"
-                      >
-                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg> Ara
-                      </a>
-                      <a
-                        href="https://wa.me/905548550590?text=Merhaba"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 text-center px-4 py-2.5 text-sm font-medium text-green-600 border border-green-200 rounded-xl hover:bg-green-50 transition-colors"
-                      >
-                        <svg className="w-4 h-4 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg> WhatsApp
-                      </a>
-                    </div>
+                      <svg className="w-4 h-4 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg> Ara
+                    </a>
+                    <a
+                      href="https://wa.me/905548550590?text=Merhaba"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 text-center px-4 py-2.5 text-sm font-medium text-green-600 border border-green-200 rounded-xl hover:bg-green-50 transition-colors"
+                    >
+                      <svg className="w-4 h-4 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg> WhatsApp
+                    </a>
                   </div>
                 </div>
-              </motion.div>
-            </>
-          )}
-        </AnimatePresence>
-      </nav>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 }
